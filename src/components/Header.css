@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: baseline;
+    background-color: #001219;
+    color: #F2FBFF;
+    padding: 1rem 1rem;
+}
+
+.header h1, .header p {
+    margin: 0;
+    padding: 0;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: unset;
+}
+
+.header p {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #B5B5B6;
+}
