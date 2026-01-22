@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import ToDoList from "../components/ToDoList";
+import ToDoList from "../components/todo-list/ToDoList";
 
 export const Route = createFileRoute("/state-arrays")({
 	component: RouteComponent,
