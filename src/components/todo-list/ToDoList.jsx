@@ -1,36 +1,17 @@
-import { useState } from "react";
+import useToDoList from "./useToDoList";
 import "./ToDoList.css";
 
 export default function ToDoList() {
-	const [currentTask, setCurrentTask] = useState("");
-	const [tasks, setTasks] = useState([]);
-	const [taskOnEdit, setTaskOnEdit] = useState(undefined);
-
-	function addTask() {
-		if (!currentTask) return;
-		const newTask = {
-			id: crypto.randomUUID(),
-			description: currentTask,
-		};
-		setTasks([...tasks, newTask]);
-		setCurrentTask("");
-	}
-
-	function removeTask(task) {
-		const newTasks = tasks.filter((target) => target.id !== task.id);
-		setTasks(newTasks);
-	}
-
-	function updateTask() {
-		const newTasks = tasks.map((target) => {
-			if (target.id === taskOnEdit.id) {
-				return { ...target, description: taskOnEdit.description };
-			}
-			return target;
-		});
-		setTasks(newTasks);
-		setTaskOnEdit(undefined);
-	}
+	const {
+		nextTaskDescription,
+        setNextTaskDescription,
+        tasks,
+        taskOnEdit,
+        setTaskOnEdit,
+        addTask,
+        removeTask,
+        updateTask
+	} = useToDoList();
 
 	const enableEditting = (task) => setTaskOnEdit(task);
 	const disableEditting = () => setTaskOnEdit(undefined);
@@ -82,9 +63,9 @@ export default function ToDoList() {
 				<label htmlFor="task">Add new task: </label>
 				<input
 					type="text"
-					value={currentTask}
+					value={nextTaskDescription}
 					id="task"
-					onChange={(e) => setCurrentTask(e.target.value)}
+					onChange={(e) => setNextTaskDescription(e.target.value)}
 				/>
 				<button>Add</button>
 			</form>
