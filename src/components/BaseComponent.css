@@ -1,0 +1,19 @@
+.baseComponent {
+    border: 1px solid #001219;
+    margin: 0 auto;
+    width: 1000px;
+    border-radius: 4px;
+}
+
+.baseComponent h3 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #093343;
+    color: #e5ebf0;
+    text-align: center;
+    margin: 0;
+}
+
+.baseComponent .children {
+    padding: 10px 20px;
+}
