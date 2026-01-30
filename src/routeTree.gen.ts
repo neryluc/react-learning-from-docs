@@ -15,6 +15,7 @@ import { Route as RenderingListsRouteImport } from './routes/rendering-lists'
 import { Route as PropsRouteImport } from './routes/props'
 import { Route as HowToInitializeAReactProjectRouteImport } from './routes/how-to-initialize-a-react-project'
 import { Route as HowToAddRoutingRouteImport } from './routes/how-to-add-routing'
+import { Route as ExampleSectionsRouteImport } from './routes/example-sections'
 import { Route as IndexRouteImport } from './routes/index'
 
 const StateArraysRoute = StateArraysRouteImport.update({
@@ -48,6 +49,11 @@ const HowToAddRoutingRoute = HowToAddRoutingRouteImport.update({
   path: '/how-to-add-routing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExampleSectionsRoute = ExampleSectionsRouteImport.update({
+  id: '/example-sections',
+  path: '/example-sections',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -56,6 +62,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/example-sections': typeof ExampleSectionsRoute
   '/how-to-add-routing': typeof HowToAddRoutingRoute
   '/how-to-initialize-a-react-project': typeof HowToInitializeAReactProjectRoute
   '/props': typeof PropsRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/example-sections': typeof ExampleSectionsRoute
   '/how-to-add-routing': typeof HowToAddRoutingRoute
   '/how-to-initialize-a-react-project': typeof HowToInitializeAReactProjectRoute
   '/props': typeof PropsRoute
@@ -75,6 +83,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/example-sections': typeof ExampleSectionsRoute
   '/how-to-add-routing': typeof HowToAddRoutingRoute
   '/how-to-initialize-a-react-project': typeof HowToInitializeAReactProjectRoute
   '/props': typeof PropsRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/example-sections'
     | '/how-to-add-routing'
     | '/how-to-initialize-a-react-project'
     | '/props'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/example-sections'
     | '/how-to-add-routing'
     | '/how-to-initialize-a-react-project'
     | '/props'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/example-sections'
     | '/how-to-add-routing'
     | '/how-to-initialize-a-react-project'
     | '/props'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExampleSectionsRoute: typeof ExampleSectionsRoute
   HowToAddRoutingRoute: typeof HowToAddRoutingRoute
   HowToInitializeAReactProjectRoute: typeof HowToInitializeAReactProjectRoute
   PropsRoute: typeof PropsRoute
@@ -166,6 +179,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowToAddRoutingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/example-sections': {
+      id: '/example-sections'
+      path: '/example-sections'
+      fullPath: '/example-sections'
+      preLoaderRoute: typeof ExampleSectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExampleSectionsRoute: ExampleSectionsRoute,
   HowToAddRoutingRoute: HowToAddRoutingRoute,
   HowToInitializeAReactProjectRoute: HowToInitializeAReactProjectRoute,
   PropsRoute: PropsRoute,

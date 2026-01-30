@@ -1,0 +1,37 @@
+.sections-menu {
+	border: 1px solid black;
+	border-radius: 4px;
+}
+
+.sections-menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	border-bottom: 1px solid black;
+}
+
+.sections-menu li a {
+	text-decoration: none;
+	color: unset;
+	padding: 10px 20px;
+	display: inline-block;
+}
+
+.sections-menu ul li:first-child a {
+	border-top-left-radius: 4px;
+}
+
+.sections-menu li a:hover {
+	background-color: #01171f;
+	color: #dedede;
+}
+
+.sections-content {
+	padding: 10px 20px;
+}
+
+.sections-menu li a.active {
+	background-color: #01171f;
+	color: #dedede;
+}
