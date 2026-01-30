@@ -25,6 +25,9 @@ export default function Menu() {
 				<li>
 					<Link to={"/state-arrays"}>State - Arrays</Link>
 				</li>
+				<li>
+					<Link to={"/example-sections"}>Example - Sections</Link>
+				</li>
 			</ul>
 		</nav>
 	);
